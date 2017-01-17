@@ -33,7 +33,7 @@ var userMethods = {
      * @return {JSON} response
      */
     getMe: function(request, response, callback) {
-        var data = {"access-token":request.access_token, "fields": pinterestWSConfig.Fields.User};
+        var data = {"access_token":request.access_token, "fields": pinterestWSConfig.Fields.User};
         var requestURL = apiConfig.API_BASE_URL + pinterestWSConfig.WebServices.GetMe;
         if (request.data) {
             requestURL += '?' + querystring.stringify(request.data);
@@ -48,7 +48,7 @@ var userMethods = {
      * @return {JSON} response
      */
     getMeBoards: function(request, response, callback) {
-        var data = {"access-token":request.access_token, "fields": pinterestWSConfig.Fields.Boards};
+        var data = {"access_token":request.access_token, "fields": pinterestWSConfig.Fields.Boards};
         var requestURL = apiConfig.API_BASE_URL + pinterestWSConfig.WebServices.GetMeBoards;
         if (request.data) {
             requestURL += '?' + querystring.stringify(request.data);
@@ -63,7 +63,7 @@ var userMethods = {
      * @return {JSON} response
      */
     getMeLikes: function(request, response, callback) {
-        var data = {"access-token":request.access_token, "fields": pinterestWSConfig.Fields.Pins};
+        var data = {"access_token":request.access_token, "fields": pinterestWSConfig.Fields.Pins};
         var requestURL = apiConfig.API_BASE_URL + pinterestWSConfig.WebServices.GetMeLikes;
         if (request.data) {
             requestURL += '?' + querystring.stringify(request.data);
@@ -78,7 +78,7 @@ var userMethods = {
      * @return {JSON} response
      */
     getMePins: function(request, response, callback) {
-        var data = {"access-token":request.access_token, "fields": pinterestWSConfig.Fields.Pins};
+        var data = {"access_token":request.access_token, "fields": pinterestWSConfig.Fields.Pins};
         var requestURL = apiConfig.API_BASE_URL + pinterestWSConfig.WebServices.GetMePins;
         if (request.data) {
             requestURL += '?' + querystring.stringify(request.data);
