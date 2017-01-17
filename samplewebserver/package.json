@@ -1,0 +1,11 @@
+{
+  "name": "samplewebserver",
+  "version": "1.0.0",
+  "description": "Pinterest API integrated web server for testing!!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vigneshuvi",
+  "license": "ISC"
+}
