@@ -94,6 +94,7 @@ var userMethods = {
      * @invoke callback(Object response)
      */
     get: function(url, shouldParse, req, res, callback) {
+        console.log("Requested URL:  "+url);
         request(url, function (err, response, body) {
             if (err) {
                 console.error('Error making GET request to endpoint ' + url);
