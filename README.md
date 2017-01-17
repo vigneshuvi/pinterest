@@ -1,6 +1,6 @@
 # Pintest  
 
-    Helps to post text, images in Pinterest boards.
+    Helps to integrate the Pinterest web services.
 
 ___
 
