@@ -46,7 +46,7 @@ var userMethods = {
                     environment : process.env.NODE_ENV,
                     "data" : data
                 }
-                return response.status(200).send(resJson);
+                return resJson;
             }
         );
     },
@@ -71,7 +71,7 @@ var userMethods = {
                     environment : process.env.NODE_ENV,
                     "data" : data
                 }
-                return response.status(200).send(resJson);
+                return resJson;
             }
         );
     },
@@ -96,7 +96,7 @@ var userMethods = {
                     environment : process.env.NODE_ENV,
                     "data" : data
                 }
-                return response.status(200).send(resJson);
+                return resJson;
             }
         );
     },
@@ -121,7 +121,7 @@ var userMethods = {
                     environment : process.env.NODE_ENV,
                     "data" : data
                 }
-                return response.status(200).send(resJson);
+                return resJson;
             }
         );
     },
