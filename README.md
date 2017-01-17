@@ -1,4 +1,4 @@
-# Pintest  
+# Pinterest  
 
     Helps to integrate the Pinterest web services.
 
