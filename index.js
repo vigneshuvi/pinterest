@@ -26,27 +26,6 @@ var userMethods = {
         return response;
     },
 
-    /*
-     * Get User information based on Access token.
-     *
-     * @param  {JSON} request
-     * @return {JSON} response
-     */
-    getMe: function(request, response) {
-        var data = {"access-token":request.access_token, "fields": pinterestWSConfig.Fields.User};
-        var requestURL = apiConfig.API_BASE_URL + pinterestWSConfig.WebServices.GetMe;
-        if (request.data) {
-            requestURL += '?' + querystring.stringify(request.data);
-        }
-        userMethods.get(requestURL, true,
-            function(data) {
-                var response = {"status":200};
-                return response;
-            }
-        );
-    },
-
-
      /*
      * Get User information based on Access token.
      *
@@ -61,8 +40,13 @@ var userMethods = {
         }
         userMethods.get(requestURL, true,
             function(data) {
-                var response = {"status":200};
-                return response;
+                var resJson = {
+                    status : true,
+                    message : "Successfully fetch the user information.",
+                    environment : process.env.NODE_ENV,
+                    "data" : data
+                }
+                return resJson;
             }
         );
     },
@@ -81,8 +65,13 @@ var userMethods = {
         }
         userMethods.get(requestURL, true,
             function(data) {
-                var response = {"status":200};
-                return response;
+                var resJson = {
+                    status : true,
+                    message : "Successfully fetch the user boards.",
+                    environment : process.env.NODE_ENV,
+                    "data" : data
+                }
+                return resJson;
             }
         );
     },
@@ -101,8 +90,13 @@ var userMethods = {
         }
         userMethods.get(requestURL, true,
             function(data) {
-                var response = {"status":200};
-                return response;
+                var resJson = {
+                    status : true,
+                    message : "Successfully fetch the user likes.",
+                    environment : process.env.NODE_ENV,
+                    "data" : data
+                }
+                return resJson;
             }
         );
     },
@@ -121,8 +115,13 @@ var userMethods = {
         }
         userMethods.get(requestURL, true,
             function(data) {
-                var response = {"status":200};
-                return response;
+                var resJson = {
+                    status : true,
+                    message : "Successfully fetch the user pins.",
+                    environment : process.env.NODE_ENV,
+                    "data" : data
+                }
+                return resJson;
             }
         );
     },
