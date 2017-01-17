@@ -35,8 +35,8 @@ var userMethods = {
     getMe: function(request, response, data, callback) {
         var data = {"access_token":data.access_token, "fields": pinterestWSConfig.Fields.User};
         var requestURL = apiConfig.API_BASE_URL + pinterestWSConfig.WebServices.GetMe;
-        if (request.data) {
-            requestURL += '?' + querystring.stringify(request.data);
+        if (data) {
+            requestURL += '?' + querystring.stringify(data);
         }
         userMethods.get(requestURL, true, request, response, callback);
     },
@@ -50,8 +50,8 @@ var userMethods = {
     getMeBoards: function(request, response, data, callback) {
         var data = {"access_token":data.access_token, "fields": pinterestWSConfig.Fields.Boards};
         var requestURL = apiConfig.API_BASE_URL + pinterestWSConfig.WebServices.GetMeBoards;
-        if (request.data) {
-            requestURL += '?' + querystring.stringify(request.data);
+        if (data) {
+            requestURL += '?' + querystring.stringify(data);
         }
         userMethods.get(requestURL, true, request, response, callback);
     },
@@ -65,8 +65,8 @@ var userMethods = {
     getMeLikes: function(request, response, data, callback) {
         var data = {"access_token":data.access_token, "fields": pinterestWSConfig.Fields.Pins};
         var requestURL = apiConfig.API_BASE_URL + pinterestWSConfig.WebServices.GetMeLikes;
-        if (request.data) {
-            requestURL += '?' + querystring.stringify(request.data);
+        if (data) {
+            requestURL += '?' + querystring.stringify(data);
         }
         userMethods.get(requestURL, true, request, response, callback );
     },
@@ -80,8 +80,8 @@ var userMethods = {
     getMePins: function(request, response, data, callback) {
         var data = {"access_token":data.access_token, "fields": pinterestWSConfig.Fields.Pins};
         var requestURL = apiConfig.API_BASE_URL + pinterestWSConfig.WebServices.GetMePins;
-        if (request.data) {
-            requestURL += '?' + querystring.stringify(request.data);
+        if (data) {
+            requestURL += '?' + querystring.stringify(data);
         }
         userMethods.get(requestURL, true, request, response, callback);
     },
