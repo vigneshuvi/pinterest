@@ -12,4 +12,4 @@ Created by [Vignesh](http://vigneshuvi.github.io/)
 
 ![alt text][logo]
 
-[logo]: https://github.com/vigneshuvi/vigneshuvi.github.io/blob/master/favicon.ico/android-icon-48x48.png
+[logo]: https://avatars2.githubusercontent.com/u/4980335?v=3&u=a9f67c2933379393a43e42e1d8e18e5f54f28836&s=40
