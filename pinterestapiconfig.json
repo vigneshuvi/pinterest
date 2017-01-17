@@ -1,8 +1,13 @@
 {
 	"Fields": {
-		"User": "id,first_name,bio,last_name,created_at,image,username"
+		"User": "id,first_name,bio,last_name,created_at,image,username",
+		"Boards":"counts,created_at,creator,description,id,image,name,privacy,reason,url"
+		"Pins": "attribution,board,color,counts,created_at,creator,id,image,link,media,metadata,note,original_link,url"
 	}, 
 	"WebServices" : {
-		"GetMe" : "/v1/me/"
+		"GetMe" : "/v1/me/",
+		"GetMeBoards" : "/v1/me/boards/",
+		"GetMeLikes" : "/v1/me/likes/",
+		"GetMePins" : "/v1/me/pins/"
 	}	
 }
