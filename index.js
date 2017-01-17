@@ -32,13 +32,13 @@ var userMethods = {
      * @param  {JSON} request
      * @return {JSON} response
      */
-    getMe: function(request, response, callback) {
-        var data = {"access_token":request.access_token, "fields": pinterestWSConfig.Fields.User};
+    getMe: function(request, response, data, callback) {
+        var data = {"access_token":data.access_token, "fields": pinterestWSConfig.Fields.User};
         var requestURL = apiConfig.API_BASE_URL + pinterestWSConfig.WebServices.GetMe;
         if (request.data) {
             requestURL += '?' + querystring.stringify(request.data);
         }
-        userMethods.get(requestURL, true, callback);
+        userMethods.get(requestURL, true, req, res, callback);
     },
 
      /*
@@ -47,13 +47,13 @@ var userMethods = {
      * @param  {JSON} request
      * @return {JSON} response
      */
-    getMeBoards: function(request, response, callback) {
-        var data = {"access_token":request.access_token, "fields": pinterestWSConfig.Fields.Boards};
+    getMeBoards: function(request, response, data, callback) {
+        var data = {"access_token":data.access_token, "fields": pinterestWSConfig.Fields.Boards};
         var requestURL = apiConfig.API_BASE_URL + pinterestWSConfig.WebServices.GetMeBoards;
         if (request.data) {
             requestURL += '?' + querystring.stringify(request.data);
         }
-        userMethods.get(requestURL, true, callback);
+        userMethods.get(requestURL, true, req, res, callback);
     },
 
     /*
@@ -62,13 +62,13 @@ var userMethods = {
      * @param  {JSON} request
      * @return {JSON} response
      */
-    getMeLikes: function(request, response, callback) {
-        var data = {"access_token":request.access_token, "fields": pinterestWSConfig.Fields.Pins};
+    getMeLikes: function(request, response, data, callback) {
+        var data = {"access_token":data.access_token, "fields": pinterestWSConfig.Fields.Pins};
         var requestURL = apiConfig.API_BASE_URL + pinterestWSConfig.WebServices.GetMeLikes;
         if (request.data) {
             requestURL += '?' + querystring.stringify(request.data);
         }
-        userMethods.get(requestURL, true, callback );
+        userMethods.get(requestURL, true, req, res, callback );
     },
 
      /*
@@ -77,13 +77,13 @@ var userMethods = {
      * @param  {JSON} request
      * @return {JSON} response
      */
-    getMePins: function(request, response, callback) {
-        var data = {"access_token":request.access_token, "fields": pinterestWSConfig.Fields.Pins};
+    getMePins: function(request, response, data, callback) {
+        var data = {"access_token":data.access_token, "fields": pinterestWSConfig.Fields.Pins};
         var requestURL = apiConfig.API_BASE_URL + pinterestWSConfig.WebServices.GetMePins;
         if (request.data) {
             requestURL += '?' + querystring.stringify(request.data);
         }
-        userMethods.get(requestURL, true, callback);
+        userMethods.get(requestURL, true, req, res, callback);
     },
 
     /* 
@@ -93,22 +93,26 @@ var userMethods = {
      * @param Function callback
      * @invoke callback(Object response)
      */
-    get: function(url, shouldParse, callback) {
+    get: function(url, shouldParse, req, res, callback) {
         request(url, function (err, response, body) {
             if (err) {
                 console.error('Error making GET request to endpoint ' + url);
-                callback(shouldParse ? {} : "{}");
+                callback(req, res, shouldParse ? {} : "{}");
             }
 
             console.log("user response:"+body);
             if (response && response.statusCode !== 200) {
                 console.error('non 200 response for URL: ' + url);
-                callback(shouldParse ? {} : "{}");
+                if (body) {
+                    callback(shouldParse ? JSON.parse(body) : body);
+                } else {
+                    callback(req, res, shouldParse ? {} : "{}");
+                }
                 return;
             } 
 
             var toReturn = shouldParse ? JSON.parse(body) : body;
-            callback(toReturn);
+            callback(req, res, toReturn);
             return;
         });
     }
