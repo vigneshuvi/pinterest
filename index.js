@@ -93,7 +93,7 @@ var userMethods = {
      * @param Function callback
      * @invoke callback(Object response)
      */
-    get: function(url, shouldParse, response, callback) {
+    get: function(url, shouldParse, callback) {
         request(url, function (err, response, body) {
             if (err) {
                 console.error('Error making GET request to endpoint ' + url);
@@ -106,7 +106,7 @@ var userMethods = {
                 callback(shouldParse ? {} : "{}");
                 return;
             } 
-            
+
             var toReturn = shouldParse ? JSON.parse(body) : body;
             callback(toReturn);
             return;
