@@ -1,0 +1,14 @@
+{
+	"DEV" : {
+		"API_KEY" : "",
+		"API_BASE_URL" : "https://api.pinterest.com"
+	},
+	"QA" : {
+		"API_KEY" : "",
+		"API_BASE_URL" : "https://api.pinterest.com"
+	},
+	"PROD" : {
+		"API_KEY" : "",
+		"API_BASE_URL" : "https://api.pinterest.com"
+	}	
+}

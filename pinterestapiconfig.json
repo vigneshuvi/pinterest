@@ -1,0 +1,8 @@
+{
+	"Fields": {
+		"User": "id,first_name,bio,last_name,created_at,image,username"
+	}, 
+	"WebServices" : {
+		"GetMe" : "/v1/me/"
+	}	
+}
