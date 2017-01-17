@@ -38,7 +38,7 @@ var userMethods = {
         if (request.data) {
             requestURL += '?' + querystring.stringify(request.data);
         }
-        userMethods.get(requestURL, true, req, res, callback);
+        userMethods.get(requestURL, true, request, response, callback);
     },
 
      /*
@@ -53,7 +53,7 @@ var userMethods = {
         if (request.data) {
             requestURL += '?' + querystring.stringify(request.data);
         }
-        userMethods.get(requestURL, true, req, res, callback);
+        userMethods.get(requestURL, true, request, response, callback);
     },
 
     /*
@@ -68,7 +68,7 @@ var userMethods = {
         if (request.data) {
             requestURL += '?' + querystring.stringify(request.data);
         }
-        userMethods.get(requestURL, true, req, res, callback );
+        userMethods.get(requestURL, true, request, response, callback );
     },
 
      /*
@@ -83,7 +83,7 @@ var userMethods = {
         if (request.data) {
             requestURL += '?' + querystring.stringify(request.data);
         }
-        userMethods.get(requestURL, true, req, res, callback);
+        userMethods.get(requestURL, true, request, response, callback);
     },
 
     /* 
