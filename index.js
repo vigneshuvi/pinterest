@@ -47,7 +47,7 @@ var userMethods = {
             if (response && response.statusCode !== 200) {
                 console.error('non 200 response for URL: ' + url);
                 if (body) {
-                    callback(shouldParse ? JSON.parse(body) : body);
+                    callback(req, res, shouldParse ? JSON.parse(body) : body);
                 } else {
                     callback(req, res, shouldParse ? {} : "{}");
                 }
@@ -83,7 +83,7 @@ var userMethods = {
                 if (response && response.statusCode !== 200) {
                     console.error('non 200 response for URL: ' + url);
                     if (body) {
-                        callback(shouldParse ? JSON.parse(body) : body);
+                        callback(req, res, shouldParse ? JSON.parse(body) : body);
                     } else {
                         callback(req, res, shouldParse ? {} : "{}");
                     }
