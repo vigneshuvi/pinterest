@@ -37,42 +37,41 @@ app.get('/',function(req,res){
 // Response the Home Url
 app.get('/getMe', function(req,res) {
 	var reqJson = {"access_token": ""};
-    var resJson =  pinterest.getMe(req, res, reqJson, function(req, res, data) {
-                var resJson = {
-                    status : true,
-                    message : "Successfully fetch the user information.",
-                    environment : process.env.NODE_ENV,
-                    "data" : data
-                }
-                return res.status(200).send(resJson);
-            } );
+    pinterest.getMe(req, res, reqJson, function(req, res, data) {
+        var resJson = {
+            status : true,
+            message : "Successfully fetch the user information.",
+            environment : process.env.NODE_ENV,
+            "data" : data
+        };
+        return res.status(200).send(resJson);
+    } );
 });
 
 // Response the Home Url
 app.get('/getMeLikes', function(req,res) {
 	var reqJson = {"access_token": ""};
-    var resJson = pinterest.getMeLikes(req, res, reqJson, function(req, res,data) {
-                var resJson = {
-                    status : true,
-                    message : "Successfully fetch the user information.",
-                    environment : process.env.NODE_ENV,
-                    "data" : data
-                }
-                return res.status(200).send(resJson);
-            } );
-
+    pinterest.getMeLikes(req, res, reqJson, function(req, res,data) {
+        var resJson = {
+            status : true,
+            message : "Successfully fetch the user information.",
+            environment : process.env.NODE_ENV,
+            "data" : data
+        };
+        return res.status(200).send(resJson);
+    } );
 });
 
 // Response the Home Url
 app.get('/getMeBoards', function(req,res) {
 	var reqJson = {"access_token":""};
-    var resJson = pinterest.getMeBoards(req, res, reqJson, function(req, res,data) {
+    pinterest.getMeBoards(req, res, reqJson, function(req, res,data) {
                 var resJson = {
                     status : true,
                     message : "Successfully fetch the user information.",
                     environment : process.env.NODE_ENV,
                     "data" : data
-                }
+                };
                 return res.status(200).send(resJson);
             });
 });
@@ -80,15 +79,35 @@ app.get('/getMeBoards', function(req,res) {
 // Response the Home Url
 app.get('/getMePins', function(req,res) {
 	var reqJson = {"access_token":""};
-    var resJson = pinterest.getMePins(req, res, reqJson, function(req, res, data) {
-                var resJson = {
-                    status : true,
-                    message : "Successfully fetch the user information.",
-                    environment : process.env.NODE_ENV,
-                    "data" : data
-                }
-                return res.status(200).send(resJson);
-            });
+    pinterest.getMePins(req, res, reqJson, function(req, res, data) {
+        var resJson = {
+            status : true,
+            message : "Successfully fetch the user information.",
+            environment : process.env.NODE_ENV,
+            "data" : data
+        };
+        return res.status(200).send(resJson);
+    });
+});
+
+// Response the Home Url
+app.get('/postPins', function(req,res) {
+    var reqJson = {
+        "access_token" : "",
+        "board" : "",
+        "image_url" : "",
+        "link" : "",
+        "note" : ""
+    };
+    pinterest.postImageInBoard(req, res, reqJson, function(req, res, data) {
+        var resJson = {
+            status : true,
+            message : "Successfully posted the image in Board.",
+            environment : process.env.NODE_ENV,
+            "data" : data
+        };
+        return res.status(200).send(resJson);
+    });
 });
 
 // Validate the https first, if it is enable, just create a https server alone.
