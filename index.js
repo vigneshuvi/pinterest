@@ -29,23 +29,23 @@ var userMethods = {
     /* 
      * Method to make GET request
      *
-     * @param string url
+     * @param string requestURL
      * @param Request req
      * @param Response res
      * @param Function callback
      * @invoke callback(Object response)
      */
-    get: function(url, shouldParse, req, res, callback) {
-        console.log("Requested URL:  "+url);
+    get: function(requestURL, shouldParse, req, res, callback) {
+        console.log("Requested URL:  "+requestURL);
         request(url, function (err, response, body) {
             if (err) {
-                console.error('Error making GET request to endpoint ' + url);
+                console.error('Error making GET request to endpoint ' + requestURL);
                 callback(req, res, shouldParse ? {} : "{}");
             }
 
             console.log("user response:"+body);
             if (response && response.statusCode !== 200) {
-                console.error('non 200 response for URL: ' + url);
+                console.error('non 200 response for URL: ' + requestURL);
                 if (body) {
                     callback(req, res, shouldParse ? JSON.parse(body) : body);
                 } else {
@@ -64,7 +64,7 @@ var userMethods = {
     /* 
      * Method to make POST request
      *
-     * @param string url
+     * @param string requestURL
      * @param Request req
      * @param Response res
      * @param JSON data
@@ -72,16 +72,16 @@ var userMethods = {
      * @invoke callback(Object response)
      */
     post: function(requestURL, shouldParse, req, res, data, callback) {
-        request.post({url: requestURL, form: data}, function(err, response, body){
+        request.post({"url": requestURL, "form": data}, function(err, response, body){
          /* ... */ 
                 if (err) {
-                    console.error('Error making GET request to endpoint ' + url);
+                    console.error('Error making GET request to endpoint ' + requestURL);
                     callback(req, res, shouldParse ? {} : "{}");
                 }
 
                 console.log("user response:"+body);
                 if (response && response.statusCode !== 200) {
-                    console.error('non 200 response for URL: ' + url);
+                    console.error('non 200 response for URL: ' + requestURL);
                     if (body) {
                         callback(req, res, shouldParse ? JSON.parse(body) : body);
                     } else {
