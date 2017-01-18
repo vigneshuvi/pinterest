@@ -37,7 +37,7 @@ var userMethods = {
      */
     get: function(requestURL, shouldParse, req, res, callback) {
         console.log("Requested URL:  "+requestURL);
-        request(url, function (err, response, body) {
+        request(requestURL, function (err, response, body) {
             if (err) {
                 console.error('Error making GET request to endpoint ' + requestURL);
                 callback(req, res, shouldParse ? {} : "{}");
