@@ -58,7 +58,7 @@ var userMethods = {
             callback(req, res, toReturn);
             return;
         });
-    }
+    },
 
 
     /* 
