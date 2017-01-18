@@ -164,7 +164,7 @@ var userMethods = {
      */
     postImageInBoard: function(request, response, data, callback) {
         var requestURL = apiConfig.API_BASE_URL + pinterestWSConfig.WebServices.PostPins;
-        userMethods.get(requestURL, true, request, response, data, callback);
+        userMethods.post(requestURL, true, request, response, data, callback);
     }
 
 
