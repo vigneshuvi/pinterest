@@ -95,7 +95,7 @@ var userMethods = {
                 return;
             }
         }
-    }
+    },
 
      /*
      * Get User information based on Access token.
