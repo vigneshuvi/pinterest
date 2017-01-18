@@ -93,8 +93,7 @@ var userMethods = {
                 var toReturn = shouldParse ? JSON.parse(body) : body;
                 callback(req, res, toReturn);
                 return;
-            }
-        }
+            });
     },
 
      /*
