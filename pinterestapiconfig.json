@@ -5,7 +5,7 @@
 		"Pins": "attribution,board,color,counts,created_at,creator,id,image,link,media,metadata,note,original_link,url"
 	}, 
 	"WebServices" : {
-		"PostPins" : "/pins/",
+		"PostPins" : "/v1/pins/",
 		"GetMe" : "/v1/me/",
 		"GetMeBoards" : "/v1/me/boards/",
 		"GetMeLikes" : "/v1/me/likes/",
